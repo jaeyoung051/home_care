@@ -3,16 +3,31 @@ import { Noto_Sans_KR } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const notoSansKR = Noto_Sans_KR({ 
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-sans"
-});
+const notoSansKR = Noto_Sans_KR({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-sans',
+})
 
 export const metadata: Metadata = {
-  title: '부모님 방문요양센터 | 장기요양등급 신청 · 방문목욕 상담',
-  description: '부모님 돌봄부터 장기요양등급 상담, 방문요양, 방문목욕, 방문간호까지 한 번에 안내해드립니다. 요양보호사와 지역 복지자원 연계를 통해 보호자 중심의 안심 케어를 제공합니다.',
-  keywords: '방문요양, 방문목욕, 장기요양등급, 요양보호사, 복지용구, 방문간호, 지역 복지자원 연계',
+  title: '사상재가방문요양센터 | 부산 사상구 방문요양·방문목욕',
+  description:
+    '부산 사상구 감전동 사상재가방문요양센터입니다. 장기요양등급 상담, 방문요양, 방문목욕, 요양보호사 서비스와 보호자 중심의 돌봄 상담을 제공합니다.',
+  keywords: [
+    '사상재가방문요양센터',
+    '사상구 방문요양',
+    '부산 방문요양',
+    '감전동 방문요양',
+    '사상구 방문목욕',
+    '장기요양등급',
+    '요양보호사',
+  ],
+  verification: {
+    other: {
+      'naver-site-verification':
+        '70065b5a465e08c3a9a4b9aa9e7c4f32bf0985bb',
+    },
+  },
   icons: {
     icon: [
       {
