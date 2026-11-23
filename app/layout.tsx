@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Noto_Sans_KR } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { PHONE_NUMBER_CENTER, NAVER_MAP_LINK } from '@/lib/constants'
 import './globals.css'
 
 const notoSansKR = Noto_Sans_KR({
@@ -9,10 +10,45 @@ const notoSansKR = Noto_Sans_KR({
   variable: '--font-sans',
 })
 
+const siteUrl = 'https://www.sasangcare.com'
+const siteName = '사상재가방문요양센터'
+const siteTitle = `${siteName} | 부산 사상구 방문요양·방문목욕`
+const siteDescription = '부산 사상구 감전동 사상재가방문요양센터. 방문요양·방문목욕 서비스와 장기요양등급 신청 상담을 안내합니다.'
+
+const localBusiness = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${siteUrl}/#center`,
+  name: siteName,
+  url: `${siteUrl}/`,
+  description: siteDescription,
+  telephone: PHONE_NUMBER_CENTER,
+  hasMap: NAVER_MAP_LINK,
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: '부산광역시 사상구',
+  },
+}
+
 export const metadata: Metadata = {
-  title: '사상재가방문요양센터 | 부산 사상구 방문요양·방문목욕',
-  description:
-    '부산 사상구 감전동 사상재가방문요양센터입니다. 장기요양등급 상담, 방문요양, 방문목욕, 요양보호사 서비스와 보호자 중심의 돌봄 상담을 제공합니다.',
+  metadataBase: new URL(siteUrl),
+  title: siteTitle,
+  description: siteDescription,
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'ko_KR',
+    url: '/',
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
   keywords: [
     '사상재가방문요양센터',
     '사상구 방문요양',
@@ -62,6 +98,12 @@ export default function RootLayout({
   return (
     <html lang="ko" className="bg-background">
       <body className={`${notoSansKR.variable} font-sans antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusiness).replace(/</g, '\\u003c'),
+          }}
+        />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

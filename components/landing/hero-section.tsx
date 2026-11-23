@@ -101,6 +101,7 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-3xl font-bold leading-tight text-foreground md:text-4xl lg:text-5xl">
+              <span className="mb-3 block text-base font-medium text-primary">사상재가방문요양센터</span>
               부모님 돌봄, 장기요양등급 신청부터
               <br className="hidden md:block" />
               <span className="text-primary">
