@@ -24,6 +24,13 @@ const localBusiness = {
   description: siteDescription,
   telephone: PHONE_NUMBER_CENTER,
   hasMap: NAVER_MAP_LINK,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '새벽시장로56번길 10 1층',
+    addressLocality: '사상구',
+    addressRegion: '부산광역시',
+    addressCountry: 'KR',
+  },
   areaServed: {
     '@type': 'AdministrativeArea',
     name: '부산광역시 사상구',
