@@ -6,7 +6,7 @@ export function Footer() {
       <div className="container mx-auto max-w-5xl">
         <div className="grid gap-6 text-center md:grid-cols-[1fr_1fr] md:text-left md:items-center">
           <div>
-            <h3 className="font-bold text-foreground text-lg">[센터명]</h3>
+            <h3 className="font-bold text-foreground text-lg">사상재가방문요양센터</h3>
             <p className="text-muted-foreground text-sm mt-2">
               부산광역시 사상구 새벽시장로56번길 10 (감전동) · 대표전화 {PHONE_NUMBER_CENTER}
             </p>
@@ -23,7 +23,7 @@ export function Footer() {
         </div>
 
         <p className="text-muted-foreground text-xs text-center pt-6 md:text-left">
-          © 2025 [센터명]. All rights reserved.
+          © 2025 사상재가방문요양센터. All rights reserved.
         </p>
       </div>
     </footer>
