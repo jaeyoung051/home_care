@@ -60,8 +60,10 @@ export const metadata: Metadata = {
   ],
   verification: {
     other: {
-      'naver-site-verification':
+      'naver-site-verification': [
         '70065b5a465e08c3a9a4b9aa9e7c4f32bf0985bb',
+        'a0c00f246875ae3229bd547fcec8bca26537c1af',
+      ],
     },
   },
   icons: {
